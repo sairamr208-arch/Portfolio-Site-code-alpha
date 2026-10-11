@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alex Rivera — Senior Systems & Full-Stack Engineer building resilient distributed systems and modern interfaces." />
+  <meta name="theme-color" content="#0d0d0d" />
+  <link rel="canonical" href="https://alexrivera.dev" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Alex Rivera — Senior Full-Stack Developer" />
+  <meta property="og:description" content="Showcasing skills, production projects, resume, system architecture, and contact info." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexrivera.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@alexrivera" />
+
+  <title>Alex Rivera — Senior Full-Stack Developer</title>
+
+  <!-- SVG favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d0d0d'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='18' font-weight='bold' fill='%237c7ff7'>ar</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── TOP STATUS BANNER ───────────────────────────────────── -->
+  <div class="status-bar" id="statusBar">
+    <div class="container status-inner">
+      <div class="status-left">
+        <span class="status-indicator"></span>
+        <span class="status-text">Production Build · Continuous Deployment via <strong>GitHub Actions</strong> &amp; <strong>Netlify</strong></span>
+      </div>
+      <div class="status-right">
+        <button class="cmd-palette-trigger" id="cmdTriggerBtn" aria-label="Open Command Palette">
+          <span class="cmd-icon">⌘K</span> Quick Navigate
+        </button>
+        <span class="status-chip">branch: main</span>
+        <span class="status-chip">perf: 100/100</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── NAVIGATION ──────────────────────────────────────────── -->
+  <header class="nav-wrap" id="nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#top" class="nav-logo" aria-label="Alex Rivera Home">ar<span class="accent">.</span></a>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Resume &amp; Exp</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" id="navCmdBtn" aria-label="Search site">
+          <span class="kbd-badge">⌘K</span>
+        </button>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ─── HERO SECTION ────────────────────────────────────────── -->
+    <section class="hero section-pad">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="dot-green"></span>
+          <span>Available for Senior / Lead Full-Stack Roles</span>
+        </div>
+
+        <h1 class="hero-title">
+          Senior Full-Stack Engineer<br />
+          <span class="text-gradient">architecting scalable distributed systems &amp; modern web interfaces.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Hi, I'm <strong>Alex Rivera</strong>. With 8+ years shipping enterprise software, I build high-throughput APIs, resilient event streams, and accessible frontend architectures that solve complex business challenges.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">Featured Projects</a>
+          <a href="#experience" class="btn btn-secondary">Experience &amp; Résumé</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+
+        <!-- Terminal Widget -->
+        <div class="hero-terminal" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="term-btn red"></span>
+            <span class="term-btn yellow"></span>
+            <span class="term-btn green"></span>
+            <span class="term-title">alex@rivera-mbp: ~</span>
+          </div>
+          <div class="terminal-body">
+            <span class="ht-prompt">alex@dev:~$</span>
+            <span class="ht-text" id="typed-text"></span>
+            <span class="ht-cursor">▎</span>
+          </div>
+        </div>
+
+        <!-- Tech Pills Strip -->
+        <div class="hero-stack-wrap">
+          <span class="stack-label">Core Technologies:</span>
+          <div class="hero-stack">
+            <button class="stack-pill" data-filter="TypeScript">TypeScript</button>
+            <button class="stack-pill" data-filter="React">React / Next.js</button>
+            <button class="stack-pill" data-filter="Node.js">Node.js</button>
+            <button class="stack-pill" data-filter="Go">Go (Golang)</button>
+            <button class="stack-pill" data-filter="PostgreSQL">PostgreSQL</button>
+            <button class="stack-pill" data-filter="Redis">Redis</button>
+            <button class="stack-pill" data-filter="AWS">AWS</button>
+            <button class="stack-pill" data-filter="Docker">Docker / K8s</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROJECTS / WORK SECTION ─────────────────────────────── -->
+    <section class="work section-pad" id="work">
+      <div class="container">
+        <div class="section-header-wrap">
+          <div class="section-header">
+            <span class="section-tag">Portfolio &amp; Production Work</span>
+            <h2 class="section-heading">Featured Systems &amp; Case Studies</h2>
+            <p class="section-desc">Production platforms designed for high concurrency, zero downtime, and measurable business performance.</p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" id="projectFilters" role="tablist">
+            <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+            <button class="filter-tab" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack SaaS</button>
+            <button class="filter-tab" data-filter="frontend" role="tab" aria-selected="false">Frontend &amp; Design Systems</button>
+            <button class="filter-tab" data-filter="backend" role="tab" aria-selected="false">Backend &amp; FinTech</button>
+            <button class="filter-tab" data-filter="devops" role="tab" aria-selected="false">DevOps &amp; Infrastructure</button>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <article class="project-card" id="proj-1" data-category="fullstack" data-tech="typescript react node.js kafka postgresql redis aws docker">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="proj-badge">Featured System</span>
+              <span class="proj-year">2025–2026</span>
+              <span class="proj-tag">Full-Stack SaaS · Distributed Telemetry</span>
+            </div>
+            <h3 class="proj-title">Nexus — Real-Time Telemetry &amp; Observability Platform</h3>
+          </div>
+
+          <div class="project-content">
+            <p class="proj-desc">
+              End-to-end distributed telemetry and performance monitoring SaaS for cloud infrastructure.
+              Ingests 120,000+ telemetry events/sec, provides sub-200ms anomaly detection, and serves interactive analytics dashboards to over 15M monthly active users.
+            </p>
+
+            <div class="proj-metrics-grid">
+              <div class="metric-card">
+                <span class="metric-val">&lt; 8ms</span>
+                <span class="metric-lbl">p99 Query Latency</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">-70%</span>
+                <span class="metric-lbl">Cloud Infra Cost</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">120k/s</span>
+                <span class="metric-lbl">Event Throughput</span>
+              </div>
+            </div>
+
+            <h4 class="proj-subheading">Engineering Architecture:</h4>
+            <ul class="proj-highlights">
+              <li>Replaced polling REST endpoints with Kafka stream consumers and WebSocket pub/sub architecture.</li>
+              <li>Engineered custom WebGL/Canvas real-time charting pipeline to eliminate browser DOM reflow bottlenecks.</li>
+              <li>Configured multi-AZ PostgreSQL read replicas with PgBouncer connection pooling and Redis caching layers.</li>
+            </ul>
+
+            <div class="proj-footer">
+              <div class="proj-tech">
+                <code>TypeScript</code><code>React</code><code>Node.js</code><code>Kafka</code><code>PostgreSQL</code><code>Redis</code><code>AWS ECS</code>
+              </div>
+              <div class="proj-links">
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link">View Live Demo →</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link secondary">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" id="proj-2" data-category="frontend" data-tech="typescript react radix storybook vitest tailwind">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="proj-badge">Design Systems</span>
+              <span class="proj-year">2025</span>
+              <span class="proj-tag">Frontend Architecture &amp; A11y</span>
+            </div>
+            <h3 class="proj-title">Aura — Multi-Brand Design System &amp; Component Engine</h3>
+          </div>
+
+          <div class="project-content">
+            <p class="proj-desc">
+              Universal design system and tokenized component library adopted across 6 cross-functional product teams.
+              Built with zero runtime CSS overhead, strict WCAG 2.2 AA accessibility standards, and full keyboard navigation.
+            </p>
+
+            <div class="proj-metrics-grid">
+              <div class="metric-card">
+                <span class="metric-val">55+</span>
+                <span class="metric-lbl">Accessible Components</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">40%</span>
+                <span class="metric-lbl">Faster Feature Delivery</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">A11y Audit Score</span>
+              </div>
+            </div>
+
+            <h4 class="proj-subheading">Engineering Architecture:</h4>
+            <ul class="proj-highlights">
+              <li>Built automated Figma API pipeline synchronizing design tokens to CSS custom variables via GitHub Actions.</li>
+              <li>Authored comprehensive automated test suites using Storybook test runner, Vitest, and Axe-core.</li>
+              <li>Packaged and published as an internal monorepo NPM module with full tree-shaking and TypeScript declarations.</li>
+            </ul>
+
+            <div class="proj-footer">
+              <div class="proj-tech">
+                <code>React</code><code>TypeScript</code><code>Radix UI</code><code>Storybook</code><code>Vitest</code><code>Tailwind CSS</code>
+              </div>
+              <div class="proj-links">
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link">Storybook Preview →</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link secondary">GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" id="proj-3" data-category="backend" data-tech="node.js typescript go postgresql redis stripe docker">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="proj-badge">FinTech &amp; Core Backend</span>
+              <span class="proj-year">2024–2025</span>
+              <span class="proj-tag">Distributed Transactions · High Availability</span>
+            </div>
+            <h3 class="proj-title">PayPulse — Resilient Payment Orchestration Gateway</h3>
+          </div>
+
+          <div class="project-content">
+            <p class="proj-desc">
+              PCI-DSS Level 1 compliant financial processing gateway handling $40M+ quarterly transactional volume across 14 international currencies with deterministic fault recovery.
+            </p>
+
+            <div class="proj-metrics-grid">
+              <div class="metric-card">
+                <span class="metric-val">99.999%</span>
+                <span class="metric-lbl">Transaction Success</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">$40M+</span>
+                <span class="metric-lbl">Quarterly Volume</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">0</span>
+                <span class="metric-lbl">Double Charges</span>
+              </div>
+            </div>
+
+            <h4 class="proj-subheading">Engineering Architecture:</h4>
+            <ul class="proj-highlights">
+              <li>Implemented idempotent payment state-machine with distributed Redis locks to eliminate duplicate charges.</li>
+              <li>Engineered transactional outbox pattern to guarantee event dispatch to accounting ledgers without two-phase commit overhead.</li>
+              <li>Integrated automated reconciliation microservice comparing Stripe/Adyen bank statements against local database records.</li>
+            </ul>
+
+            <div class="proj-footer">
+              <div class="proj-tech">
+                <code>Node.js</code><code>TypeScript</code><code>Go</code><code>PostgreSQL</code><code>Redis</code><code>Stripe API</code><code>Docker</code>
+              </div>
+              <div class="proj-links">
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link">Architecture Case Study →</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link secondary">GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" id="proj-4" data-category="devops" data-tech="go kubernetes terraform prometheus github actions docker aws">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="proj-badge">DevOps &amp; Open Source</span>
+              <span class="proj-year">2024</span>
+              <span class="proj-tag">Kubernetes CLI · GitOps Automation</span>
+            </div>
+            <h3 class="proj-title">CloudMesh — GitOps Canary Rollout &amp; Deployment Engine</h3>
+          </div>
+
+          <div class="project-content">
+            <p class="proj-desc">
+              High-performance CLI and daemon written in Go to automate zero-downtime Kubernetes rollouts, metric-driven canary verification, and instant automatic rollbacks.
+            </p>
+
+            <div class="proj-metrics-grid">
+              <div class="metric-card">
+                <span class="metric-val">12s</span>
+                <span class="metric-lbl">Deployment Time</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">Zero-Downtime Rollouts</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val">500+</span>
+                <span class="metric-lbl">GitHub Stars</span>
+              </div>
+            </div>
+
+            <h4 class="proj-subheading">Engineering Architecture:</h4>
+            <ul class="proj-highlights">
+              <li>Reduced deploy cycle time from 45 minutes to 12 seconds with parallel container image layering and cache optimizations.</li>
+              <li>Built real-time Prometheus error-rate sentinel that initiates rollback within 3 seconds of HTTP 5xx spikes.</li>
+              <li>Packaged as single-binary distribution with multi-platform cross-compilation via GoReleaser.</li>
+            </ul>
+
+            <div class="proj-footer">
+              <div class="proj-tech">
+                <code>Go</code><code>Kubernetes</code><code>Terraform</code><code>Prometheus</code><code>GitHub Actions</code><code>Docker</code>
+              </div>
+              <div class="proj-links">
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn-link">View on GitHub (500★) →</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS MATRIX SECTION ───────────────────────────────── -->
+    <section class="skills-section section-pad" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-heading">Skills &amp; Architecture Matrix</h2>
+          <p class="section-desc">Practical technologies, architectural patterns, and engineering principles I utilize to build scalable products.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-icon">&lt;/&gt;</span>
+              <h3 class="skill-cat-title">Frontend Systems</h3>
+            </div>
+            <p class="skill-cat-desc">Building responsive, accessible, high-performance UIs with strict type safety.</p>
+            <div class="skill-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Next.js (App Router)</span>
+              <span class="tag">HTML5 / Semantic A11y</span>
+              <span class="tag">CSS3 / Modern CSS</span>
+              <span class="tag">State Machines (XState/Zustand)</span>
+              <span class="tag">Web Performance &amp; CWV</span>
+              <span class="tag">Storybook</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-icon">⚙️</span>
+              <h3 class="skill-cat-title">Backend &amp; Distributed Systems</h3>
+            </div>
+            <p class="skill-cat-desc">Designing resilient microservices, high-throughput APIs, and concurrency pipelines.</p>
+            <div class="skill-tags">
+              <span class="tag">Node.js / Express / NestJS</span>
+              <span class="tag">Go (Golang)</span>
+              <span class="tag">Python / FastAPI</span>
+              <span class="tag">RESTful API Design</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">gRPC &amp; Protobuf</span>
+              <span class="tag">Event-Driven Architecture</span>
+              <span class="tag">Microservices</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-icon">🗄️</span>
+              <h3 class="skill-cat-title">Data &amp; Persistence</h3>
+            </div>
+            <p class="skill-cat-desc">Database schema modeling, query optimization, indexing, and stream processing.</p>
+            <div class="skill-tags">
+              <span class="tag">PostgreSQL (Indexing &amp; Tuning)</span>
+              <span class="tag">Redis (Caching, Pub/Sub, Locks)</span>
+              <span class="tag">Apache Kafka</span>
+              <span class="tag">Prisma / Drizzle ORM</span>
+              <span class="tag">Elasticsearch</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Data Migrations</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-icon">☁️</span>
+              <h3 class="skill-cat-title">Cloud, DevOps &amp; Reliability</h3>
+            </div>
+            <p class="skill-cat-desc">Infrastructure as Code, container orchestration, and continuous delivery.</p>
+            <div class="skill-tags">
+              <span class="tag">Amazon Web Services (AWS)</span>
+              <span class="tag">Docker &amp; Containers</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Terraform (IaC)</span>
+              <span class="tag">GitHub Actions CI/CD</span>
+              <span class="tag">Netlify / Vercel Deployments</span>
+              <span class="tag">Prometheus &amp; Grafana</span>
+              <span class="tag">Linux / Bash Scripting</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-icon">🛡️</span>
+              <h3 class="skill-cat-title">Quality &amp; Testing</h3>
+            </div>
+            <p class="skill-cat-desc">End-to-end verification, test-driven methodologies, and security compliance.</p>
+            <div class="skill-tags">
+              <span class="tag">Jest &amp; Vitest</span>
+              <span class="tag">Playwright / Cypress</span>
+              <span class="tag">Integration Testing</span>
+              <span class="tag">Load Testing (k6)</span>
+              <span class="tag">OWASP Security Guidelines</span>
+              <span class="tag">PCI-DSS Standards</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 6 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-icon">👥</span>
+              <h3 class="skill-cat-title">Engineering Leadership</h3>
+            </div>
+            <p class="skill-cat-desc">Mentoring engineers, RFC documentation, sprint planning, and system reviews.</p>
+            <div class="skill-tags">
+              <span class="tag">Architecture RFCs</span>
+              <span class="tag">Technical Mentorship</span>
+              <span class="tag">Code Review Standards</span>
+              <span class="tag">Agile &amp; Scrum</span>
+              <span class="tag">Incident Post-Mortems</span>
+              <span class="tag">Cross-functional Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── EXPERIENCE & RESUME SECTION ─────────────────────────── -->
+    <section class="experience-section section-pad" id="experience">
+      <div class="container">
+        <div class="experience-top-row">
+          <div class="section-header">
+            <span class="section-tag">Career History</span>
+            <h2 class="section-heading">Experience &amp; Résumé</h2>
+            <p class="section-desc">Track record of building engineering teams and delivering reliable software at scale.</p>
+          </div>
+          
+          <div class="resume-download-box">
+            <button class="btn btn-primary" id="openResumeBtn">
+              <span>📄 View Full Résumé Modal</span>
+            </button>
+            <button class="btn btn-secondary" onclick="window.print()" title="Print or save as PDF">
+              <span>🖨️ Print / Save PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Lead Full-Stack Engineer</h3>
+                <span class="timeline-company">Vanguard Tech Solutions · San Francisco, CA (Remote)</span>
+              </div>
+              <span class="timeline-period">2023 — Present</span>
+            </div>
+            <p class="timeline-summary">
+              Leading the core platform engineering pod of 7 engineers building distributed cloud infrastructure and client analytics tools.
+            </p>
+            <ul class="timeline-bullets">
+              <li>Architected the migration of core legacy monolith to event-driven microservices on AWS ECS, reducing latency by 45%.</li>
+              <li>Mentored 4 mid-level engineers to senior promotions through rigorous code reviews, pair programming, and architectural RFCs.</li>
+              <li>Standardized continuous deployment pipelines with automated preview environments, accelerating release frequency by 3x.</li>
+            </ul>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Senior Full-Stack Developer</h3>
+                <span class="timeline-company">Apex Digital Systems · Seattle, WA</span>
+              </div>
+              <span class="timeline-period">2020 — 2023</span>
+            </div>
+            <p class="timeline-summary">
+              Engineered customer-facing enterprise applications and high-throughput transactional APIs supporting enterprise SaaS customers.
+            </p>
+            <ul class="timeline-bullets">
+              <li>Engineered high-frequency payment orchestration engine processing over $40M annually with zero double-charge anomalies.</li>
+              <li>Spearheaded front-end migration from fragmented codebases to a unified TypeScript and React design system.</li>
+              <li>Optimized PostgreSQL database query planning and indexing, reducing p95 database load by 60%.</li>
+            </ul>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Full-Stack Software Engineer</h3>
+                <span class="timeline-company">PixelCraft Studios · Austin, TX</span>
+              </div>
+              <span class="timeline-period">2018 — 2020</span>
+            </div>
+            <p class="timeline-summary">
+              Developed modern web portals, REST APIs, and interactive client applications for high-growth digital brands.
+            </p>
+            <ul class="timeline-bullets">
+              <li>Built real-time collaboration canvas applications using WebSockets, Canvas API, and Node.js.</li>
+              <li>Implemented automated CI/CD unit and integration test suites boosting code test coverage from 35% to 88%.</li>
+            </ul>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">B.S. in Computer Science</h3>
+                <span class="timeline-company">State University of Technology</span>
+              </div>
+              <span class="timeline-period">2014 — 2018</span>
+            </div>
+            <p class="timeline-summary">
+              Graduated with Honors. Focus on Data Structures, Algorithms, Distributed Computing, and Database Systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT SECTION ───────────────────────────────────────── -->
+    <section class="about section-pad" id="about">
+      <div class="container about-grid">
+        <div class="about-left">
+          <div class="section-header">
+            <span class="section-tag">Engineering Profile</span>
+            <h2 class="section-heading">About Alex</h2>
+          </div>
+          <p class="lead-text">
+            I am a senior full-stack engineer who values <strong>clarity over cleverness</strong>, <strong>resilient system design</strong>, and <strong>fast user experiences</strong>.
+          </p>
+          <p>
+            Over the past 8 years, I have built and maintained systems that serve tens of millions of monthly requests. My experience spans the entire application lifecycle—from initial architectural RFCs and database schema design to building polished, accessible user interfaces and automating deployment pipelines.
+          </p>
+          <p>
+            I believe great engineering is not just about writing code; it is about building maintainable software that empowers businesses and delights users. I am a strong advocate for automated testing, continuous integration, and transparent team collaboration.
+          </p>
+          <p>
+            When I am not in my terminal, I actively contribute to open-source software, write technical deep-dives on distributed systems, and mentor upcoming engineers.
+          </p>
+
+          <div class="about-stats-row">
+            <div class="about-stat">
+              <span class="stat-num">8+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-num">20+</span>
+              <span class="stat-label">Production Releases</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-num">15M+</span>
+              <span class="stat-label">Users Served</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <div class="principles-card">
+            <h3 class="card-title">Core Engineering Principles</h3>
+            <ul class="principles-list">
+              <li>
+                <strong>1. Correctness &amp; Idempotency</strong>
+                <span>Design backend APIs and workers to safely recover from network failures and retries.</span>
+              </li>
+              <li>
+                <strong>2. Performance as a Feature</strong>
+                <span>Keep client bundles lean, minimize layout thrashing, and optimize query latency at p99.</span>
+              </li>
+              <li>
+                <strong>3. Pragmatic Simplicity</strong>
+                <span>Choose boring, proven technologies where possible; reserve novel complexity for competitive advantages.</span>
+              </li>
+              <li>
+                <strong>4. Automated Everything</strong>
+                <span>Test coverage, linting, security audits, and deployment pipelines must be continuous and automated.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WRITING SECTION ─────────────────────────────────────── -->
+    <section class="writing section-pad" id="writing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Articles &amp; Architecture Notes</span>
+          <h2 class="section-heading">Technical Writing</h2>
+          <p class="section-desc">Practical takeaways from production incidents, architecture refactors, and scaling systems.</p>
+        </div>
+
+        <div class="post-list">
+          <a href="https://github.com" target="_blank" rel="noopener" class="post-item">
+            <div class="post-left">
+              <span class="post-title">Why Senior Engineers Avoid Percentage Bars on Portfolios</span>
+              <span class="post-desc">Replacing arbitrary skill percentages with verifiable impact, architecture notes, and production metrics.</span>
+            </div>
+            <span class="post-date">Oct 2026</span>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="post-item">
+            <div class="post-left">
+              <span class="post-title">Implementing Idempotency in Distributed Payment Pipelines</span>
+              <span class="post-desc">Practical guide to distributed Redis locks, transactional outboxes, and zero double-charge guarantees.</span>
+            </div>
+            <span class="post-date">Aug 2026</span>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="post-item">
+            <div class="post-left">
+              <span class="post-title">Comparing PostgreSQL Queues vs. Apache Kafka at Scale</span>
+              <span class="post-desc">When standard relational table queues suffice vs. when true partitioned event streaming is mandatory.</span>
+            </div>
+            <span class="post-date">May 2026</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DEPLOYMENT & CI/CD SECTION ──────────────────────────── -->
+    <section class="deploy-section section-pad" id="deployment">
+      <div class="container">
+        <div class="deploy-banner">
+          <div class="deploy-info">
+            <div class="deploy-badge">
+              <span class="pulse-dot"></span>
+              <span>CI/CD &amp; Deployment Architecture</span>
+            </div>
+            <h3 class="deploy-title">Built, Tested &amp; Deployed Like a Senior Dev</h3>
+            <p class="deploy-desc">
+              This portfolio site is version-controlled via Git and configured for zero-downtime continuous deployment on both <strong>GitHub Pages</strong> and <strong>Netlify</strong> with security headers, static asset caching, and automated builds.
+            </p>
+            <div class="deploy-tags">
+              <span>GitHub Actions CI/CD</span>
+              <span>Netlify CDN</span>
+              <span>Custom Caching Headers</span>
+              <span>WCAG 2.2 AA</span>
+              <span>100 Lighthouse Performance</span>
+            </div>
+          </div>
+          <div class="deploy-actions">
+            <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-secondary">
+              Inspect Repository &amp; Workflows →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT SECTION ─────────────────────────────────────── -->
+    <section class="contact section-pad" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="contact-heading">Let's build something remarkable.</h2>
+          <p class="contact-sub">
+            I am currently considering senior full-stack engineering roles, system architecture consulting, and lead opportunities. Whether you have a project in mind or want to discuss engineering, feel free to reach out.
+          </p>
+
+          <div class="contact-direct">
+            <span class="direct-label">Direct Email:</span>
+            <div class="email-copy-wrap">
+              <a href="mailto:alex@alexrivera.dev" class="contact-email" id="emailLink">alex@alexrivera.dev</a>
+              <button class="btn-copy" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+                <span class="copy-icon">📋</span> Copy
+              </button>
+            </div>
+            <span class="copy-feedback" id="copyFeedback" aria-live="polite">Email copied to clipboard!</span>
+          </div>
+
+          <div class="social-links-block">
+            <span class="social-label">Find me online:</span>
+            <div class="contact-links">
+              <a href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener">Twitter / X ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm" onsubmit="return false;">
+            <h3 class="form-title">Send a Quick Message</h3>
+            
+            <div class="quick-presets">
+              <span class="preset-label">Quick topics:</span>
+              <div class="preset-buttons">
+                <button type="button" class="btn-preset" data-topic="💼 Full-Time Senior / Lead Role">💼 Senior Role</button>
+                <button type="button" class="btn-preset" data-topic="🛠️ System Architecture Consulting">🛠️ Consulting</button>
+                <button type="button" class="btn-preset" data-topic="☕ Quick Tech Chat / Intro">☕ Coffee Chat</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Doe" autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@company.com" autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message / Details</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Hi Alex, we're building..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">
+              Send Message →
+            </button>
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── COMMAND PALETTE MODAL (CMD+K) ────────────────────────── -->
+  <div class="cmd-overlay" id="cmdPalette" role="dialog" aria-modal="true" aria-label="Command Palette" hidden>
+    <div class="cmd-box">
+      <div class="cmd-search-wrap">
+        <span class="cmd-search-icon">🔍</span>
+        <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a command or jump to section..." autocomplete="off" />
+        <span class="cmd-esc-badge">ESC</span>
+      </div>
+      <div class="cmd-results" id="cmdResults">
+        <div class="cmd-group-label">Navigation</div>
+        <a href="#work" class="cmd-item" data-cmd="work">
+          <span class="cmd-item-icon">📁</span>
+          <span class="cmd-item-title">Projects &amp; Case Studies</span>
+          <span class="cmd-item-key">#work</span>
+        </a>
+        <a href="#skills" class="cmd-item" data-cmd="skills">
+          <span class="cmd-item-icon">⚡</span>
+          <span class="cmd-item-title">Skills &amp; Architecture Matrix</span>
+          <span class="cmd-item-key">#skills</span>
+        </a>
+        <a href="#experience" class="cmd-item" data-cmd="experience">
+          <span class="cmd-item-icon">💼</span>
+          <span class="cmd-item-title">Career Experience &amp; Résumé</span>
+          <span class="cmd-item-key">#experience</span>
+        </a>
+        <a href="#about" class="cmd-item" data-cmd="about">
+          <span class="cmd-item-icon">👤</span>
+          <span class="cmd-item-title">About &amp; Engineering Principles</span>
+          <span class="cmd-item-key">#about</span>
+        </a>
+        <a href="#contact" class="cmd-item" data-cmd="contact">
+          <span class="cmd-item-icon">✉️</span>
+          <span class="cmd-item-title">Get In Touch</span>
+          <span class="cmd-item-key">#contact</span>
+        </a>
+
+        <div class="cmd-group-label">Quick Actions</div>
+        <div class="cmd-item" id="cmdOpenResume">
+          <span class="cmd-item-icon">📄</span>
+          <span class="cmd-item-title">View Résumé Modal</span>
+          <span class="cmd-item-key">Action</span>
+        </div>
+        <div class="cmd-item" id="cmdCopyEmail">
+          <span class="cmd-item-icon">📋</span>
+          <span class="cmd-item-title">Copy Email Address</span>
+          <span class="cmd-item-key">alex@alexrivera.dev</span>
+        </div>
+        <div class="cmd-item" id="cmdPrintResume">
+          <span class="cmd-item-icon">🖨️</span>
+          <span class="cmd-item-title">Print / Export PDF Résumé</span>
+          <span class="cmd-item-key">Ctrl+P</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── RESUME MODAL ─────────────────────────────────────────── -->
+  <div class="modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modalTitle">Alex Rivera — Resume Overview</h3>
+          <span class="modal-subtitle">Senior Full-Stack &amp; Systems Engineer</span>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close résumé modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-summary">
+          <h4>Executive Summary</h4>
+          <p>Senior Full-Stack Engineer with 8+ years architecting scalable cloud services, resilient distributed databases, and high-performance frontend interfaces. Proven track record leading engineering pods and delivering mission-critical applications.</p>
+        </div>
+
+        <div class="modal-section">
+          <h4>Core Competencies</h4>
+          <p><strong>Languages:</strong> TypeScript, JavaScript, Go (Golang), Python, SQL</p>
+          <p><strong>Frontend:</strong> React, Next.js, Web Performance, Design Systems, State Machines, WebSockets</p>
+          <p><strong>Backend:</strong> Node.js, NestJS, FastAPI, REST, GraphQL, gRPC, Kafka, Event-Driven Systems</p>
+          <p><strong>Data &amp; Cloud:</strong> PostgreSQL, Redis, AWS (ECS, S3, RDS, CloudFront), Docker, Kubernetes, Terraform</p>
+        </div>
+
+        <div class="modal-section">
+          <h4>Experience Highlights</h4>
+          <p><strong>Lead Full-Stack Engineer</strong> — Vanguard Tech (2023–Present): Architected microservices migration, cut latency 45%, managed 7 engineers.</p>
+          <p><strong>Senior Full-Stack Developer</strong> — Apex Digital (2020–2023): Built $40M payment engine with 99.999% reliability.</p>
+          <p><strong>Software Engineer</strong> — PixelCraft (2018–2020): Built real-time WebSockets collaboration tools.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="window.print()">Print PDF</button>
+        <a href="mailto:alex@alexrivera.dev?subject=Interview%20Inquiry%20-%20Alex%20Rivera" class="btn btn-primary">Contact Directly</a>
+        <button class="btn btn-ghost" id="modalCloseFooterBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-copy">© 2026 Alex Rivera. All rights reserved.</span>
+        <span class="footer-deploy-tag">Continuous Deployment Active · GitHub Actions &amp; Netlify</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-note">Crafted with semantic HTML, modern CSS &amp; vanilla JS.</span>
+        <a href="#top" class="back-to-top" aria-label="Back to top">↑ back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
